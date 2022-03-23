@@ -44,6 +44,7 @@ def calculateFitness(population):
         if d <= recorded_distence:
             recorded_distence = d
             bestpop = pop
+
     print(bestpop, recorded_distence)
 
 
