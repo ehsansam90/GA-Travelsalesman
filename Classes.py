@@ -196,8 +196,6 @@ def geneticAlgorithmPlot(population, popSize, eliteSize, mutationRate, generatio
     for i in range(len(final_order)):
         x.append(final_order[i].x)
         y.append(final_order[i].y)
-        # plt.plot(final_order[i].x,final_order[i].y, 'ro-')
-    # plt.show()
     print(x)
     print(y)
     for i in range(0, len(x)):
@@ -205,4 +203,4 @@ def geneticAlgorithmPlot(population, popSize, eliteSize, mutationRate, generatio
 
     plt.show()
 
-geneticAlgorithmPlot(population=cityList, popSize=100, eliteSize=20, mutationRate=0.01, generations=10)
+geneticAlgorithmPlot(population=cityList, popSize=100, eliteSize=20, mutationRate=0.01, generations=50)
