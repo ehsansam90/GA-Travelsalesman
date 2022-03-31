@@ -1,5 +1,6 @@
 import random
 import math
+from Classes import geneticAlgorithmPlot, City
 
 cities = [(1,2),(1,3),(1,4)] # cities should be more than two
 order = [i for i in range(len(cities))]
@@ -30,7 +31,6 @@ def calculate_dist(cities, population):
         dist +=dist
     return(dist)
 
-new_pop = create_population(order,100)
 # print(new_pop)
 # print(len(new_pop))
 # print(calculate_dist(cities, new_pop[0]))
@@ -45,20 +45,17 @@ def calculateFitness(population):
             recorded_distence = d
             bestpop = pop
 
-    print(bestpop, recorded_distence)
+    # print(bestpop, recorded_distence)
+
+cityList = []
+
+for i in range(0,3):
+    cityList.append(City(x=int(random.random() * 200), y=int(random.random() * 200)))
+
+geneticAlgorithmPlot(population=cityList, popSize=100, eliteSize=20, mutationRate=0.01, generations=5)
 
 
 
 
 
-
-calculateFitness(new_pop)
-
-
-
-
-
-
-
-# print(create_population(order,24))
 

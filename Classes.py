@@ -169,7 +169,6 @@ cityList = []
 for i in range(0,10):
     cityList.append(City(x=int(random.random() * 200), y=int(random.random() * 200)))
 
-print(cityList)
 
 def geneticAlgorithmPlot(population, popSize, eliteSize, mutationRate, generations):
     pop = initialPopulation(popSize, population)
@@ -181,8 +180,8 @@ def geneticAlgorithmPlot(population, popSize, eliteSize, mutationRate, generatio
         progress.append(1 / rankRoutes(pop)[0][1])
 
     final_order = pop[rankRoutes(pop)[0][0]]
-
-    print(pop[rankRoutes(pop)[0][0]])
+    print(population)
+    print(final_order)
 
     plt.plot(progress)
     plt.ylabel('Distance')
@@ -196,11 +195,11 @@ def geneticAlgorithmPlot(population, popSize, eliteSize, mutationRate, generatio
     for i in range(len(final_order)):
         x.append(final_order[i].x)
         y.append(final_order[i].y)
-    print(x)
-    print(y)
+
     for i in range(0, len(x)):
         plt.plot(x[i:i + 2], y[i:i + 2], 'ro-')
 
     plt.show()
 
-geneticAlgorithmPlot(population=cityList, popSize=100, eliteSize=20, mutationRate=0.01, generations=50)
+# geneticAlgorithmPlot(population=cityList, popSize=100, eliteSize=20, mutationRate=0.01, generations=500)
+# geneticAlgorithm(population=cityList, popSize=10, eliteSize=20, mutationRate=0.01, generations=500)
