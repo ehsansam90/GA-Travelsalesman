@@ -1,10 +1,10 @@
-from Classes import geneticAlgorithmPlot, City
+from Classes import gaPlot, City
 import random
 
 
 cityList = []
 
-for i in range(0,10):
+for i in range(0,20):
     cityList.append(City(x=int(random.random() * 200), y=int(random.random() * 200)))
 
-geneticAlgorithmPlot(population=cityList, popSize=50, eliteSize=20, mutationRate=0.01, generations=100)
+gaPlot(population=cityList, pop_size=100, elite_size=10, mutation_rate=0.01, generations=500)
